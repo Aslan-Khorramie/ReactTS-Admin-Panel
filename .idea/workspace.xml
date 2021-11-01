@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f32853cf-10b6-4f0f-9beb-f58560775bde" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ThemeWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/ChildrenProps.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +61,7 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="settings.editor.selected.configurable" value="file.status.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="ts.external.directory.path" value="C:\Projects\ReactTS Admin Panel\node_modules\typescript\lib" />
   </component>
   <component name="SvnConfiguration">
@@ -53,12 +76,23 @@
       <updated>1635775696260</updated>
       <workItem from="1635775702310" duration="3108000" />
       <workItem from="1635779013893" duration="879000" />
-      <workItem from="1635779923735" duration="267000" />
+      <workItem from="1635779923735" duration="3471000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="555" y="336" key="#Custom_Plugin_Repositories" timestamp="1635778921996">
@@ -69,9 +103,9 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="554" y="347" key="#ESLint/0.0.1368.872/-1920.0.1920.1040@0.0.1368.872" timestamp="1635779344790" />
-    <state x="186" y="81" key="SettingsEditor" timestamp="1635780191907">
+    <state x="186" y="81" key="SettingsEditor" timestamp="1635781117543">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="186" y="81" key="SettingsEditor/0.0.1368.872/-1920.0.1920.1040@0.0.1368.872" timestamp="1635780191907" />
+    <state x="186" y="81" key="SettingsEditor/0.0.1368.872/-1920.0.1920.1040@0.0.1368.872" timestamp="1635781117543" />
   </component>
 </project>

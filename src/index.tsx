@@ -2,9 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+// import components
+import ThemeWrapper from "./components/ThemeWrapper";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <ThemeWrapper>
+        <React.StrictMode>
+            <App/>
+        </React.StrictMode>
+    </ThemeWrapper>,
+    document.getElementById('root')
 );
