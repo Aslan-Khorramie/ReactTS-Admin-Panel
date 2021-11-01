@@ -24,3 +24,4 @@ yarn-error.log*
 
 # added by author
 tsconfig.json
+.idea
