@@ -1,20 +1,23 @@
 import React from "react";
 import { Box, Grid, TextField, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/core/styles";
 import { FaLock } from "react-icons/fa";
 import Flag from "react-world-flags";
+import { useDispatch } from "react-redux";
 
 // import components
-import ThemeWrapper from "../../components/ThemeWrapper";
+import { set_theme } from "../../redux/slices/themeSlice";
 
 const Login = () => {
-  const useStyle = makeStyles({
+  const dispatch = useDispatch();
+  const useStyle = makeStyles((theme: Theme) => ({
     root: {
       width: "100%",
       height: "100vh",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      // flip: true,
     },
     item: {
       width: "100%",
@@ -46,6 +49,7 @@ const Login = () => {
     input: {
       width: "100%",
       marginBottom: "16px",
+      flip: true,
     },
     btn: {
       width: "100%",
@@ -58,49 +62,61 @@ const Login = () => {
       width: "25%",
       display: "flex",
       justifyContent: "center",
+      direction: theme.direction,
+      // flip: false,  we should use flip to flip elements and use direction not to flip
     },
     flag: {
       borderRadius: "4px",
       margin: "auto 32px",
       cursor: "pointer",
     },
-  });
+  }));
   const classes = useStyle();
 
   return (
-    <ThemeWrapper>
-      <Grid container className={classes.root}>
-        <Grid item xs={12} className={classes.item}>
-          <Box className={classes.box}>
-            <FaLock size={27} color={"red"} style={{ marginBottom: "16px" }} />
-            <Box>Login</Box>
-          </Box>
-          <form className={classes.form} noValidate>
-            <TextField
-              type="text"
-              placeholder="Enter Username"
-              variant="outlined"
-              className={classes.input}
+    <Grid container className={classes.root}>
+      <Grid item xs={12} className={classes.item}>
+        <Box className={classes.box}>
+          <FaLock size={27} color={"red"} style={{ marginBottom: "16px" }} />
+          <Box>Login</Box>
+        </Box>
+        <form className={classes.form} noValidate>
+          <TextField
+            type="text"
+            placeholder="Enter Username"
+            variant="outlined"
+            className={classes.input}
+          />
+          <TextField
+            type="password"
+            placeholder="Enter Password"
+            variant="outlined"
+            className={classes.input}
+          />
+          <Button className={classes.btn}>Login</Button>
+        </form>
+        <Box className={classes.flagBox}>
+          <Box>
+            <Flag
+              code="364"
+              height="32"
+              className={classes.flag}
+              onClick={() => {
+                dispatch(set_theme("rtl"));
+              }}
             />
-            <TextField
-              type="password"
-              placeholder="Enter Password"
-              variant="outlined"
-              className={classes.input}
-            />
-            <Button className={classes.btn}>Login</Button>
-          </form>
-          <Box className={classes.flagBox}>
-            <Box>
-              <Flag code="364" height="32" className={classes.flag} />
-            </Box>
-            <Box>
-              <Flag code="840" height="32" className={classes.flag} />
-            </Box>
           </Box>
-        </Grid>
+          <Box>
+            <Flag
+              code="840"
+              height="32"
+              className={classes.flag}
+              onClick={() => dispatch(set_theme("ltr"))}
+            />
+          </Box>
+        </Box>
       </Grid>
-    </ThemeWrapper>
+    </Grid>
   );
 };
 

@@ -1,34 +1,49 @@
-import React from 'react';
-import {CssBaseline} from "@material-ui/core";
-import {createTheme, jssPreset, StylesProvider, ThemeProvider} from "@material-ui/core/styles";
-import {create} from "jss";
+import React from "react";
+import { CssBaseline } from "@material-ui/core";
+import {
+  createTheme,
+  Direction,
+  jssPreset,
+  StylesProvider,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+import { create } from "jss";
 import rtl from "jss-rtl";
+import { useSelector } from "react-redux";
 
 // import interfaces
-import {ChildrenProps} from "../interfaces/ChildrenProps";
+import { RootState } from "../redux/slices/rootSlice";
+import { ChildrenProps } from "../interfaces";
+
+declare module "@material-ui/core/styles/withStyles" {
+  // Augment the BaseCSSProperties so that we can control jss-rtl
+  interface BaseCSSProperties {
+    /**
+     * Used to control if the rule-set should be affected by rtl transformation
+     */
+    flip?: boolean;
+  }
+}
 
 const ThemeWrapper = (props: ChildrenProps) => {
-    // Configure JSS
-    const jss = create({plugins: [...jssPreset().plugins, rtl()]});
+  const direction = useSelector((state: RootState) => state.theme.direction);
 
-    const RTLTheme = createTheme({
-        direction: "rtl", // Both here and <body dir="rtl">
-        typography: {
-            // fontFamily: ["Vazir-Medium-FD"]
-        },
-    });
+  React.useLayoutEffect(() => {
+    document.body.setAttribute("dir", direction);
+  }, [direction]);
 
-    const LTRTheme = createTheme({
-        direction: "ltr", // Both here and <body dir="rtl">
-    });
-    return (
-        <ThemeProvider theme={LTRTheme}>
-            <CssBaseline/>
-            <StylesProvider jss={jss}>
-                {props.children}
-            </StylesProvider>
-        </ThemeProvider>
-    );
+  // Configure JSS
+  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+
+  const theme = createTheme({
+    direction: direction as Direction,
+  });
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <StylesProvider jss={jss}>{props.children}</StylesProvider>
+    </ThemeProvider>
+  );
 };
 
 export default ThemeWrapper;
