@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Vazir-Medium-FD";
+  src: url("./assets/fonts/Vazir-Medium-FD.ttf"),
+    url("./assets/fonts/Vazir-Medium-FD.eot"),
+    url("./assets/fonts/Vazir-Medium-FD.woff"),
+    url("./assets/fonts/Vazir-Medium-FD.woff2");
+  font-weight: normal;
+  font-style: normal;
+}

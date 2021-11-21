@@ -81,24 +81,24 @@ const Login = () => {
       <Grid item xs={12} className={classes.item}>
         <Box className={classes.box}>
           <FaLock size={27} color={"red"} style={{ marginBottom: "16px" }} />
-          <Box>Login</Box>
+          <Box>{t("login_page.title")}</Box>
         </Box>
         <form className={classes.form} noValidate>
           <TextField
             type="text"
-            placeholder="Enter Username"
+            placeholder={t("login_page.username")}
             variant="outlined"
             className={classes.input}
             autoComplete="off"
           />
           <TextField
             type="password"
-            placeholder="Enter Password"
+            placeholder={t("login_page.password")}
             variant="outlined"
             className={classes.input}
             autoComplete="off"
           />
-          <Button className={classes.btn}>{t("login_page.title")}</Button>
+          <Button className={classes.btn}>{t("login_page.login_btn")}</Button>
         </form>
         <Box className={classes.flagBox}>
           <Box>

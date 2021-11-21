@@ -37,6 +37,9 @@ const ThemeWrapper = (props: ChildrenProps) => {
 
   const theme = createTheme({
     direction: direction as Direction,
+    typography: {
+      fontFamily: direction === "rtl" ? "Vazir-Medium-FD" : "monospace",
+    },
   });
   return (
     <ThemeProvider theme={theme}>

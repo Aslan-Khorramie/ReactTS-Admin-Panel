@@ -11,6 +11,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { I18nextProvider } from "react-i18next";
 import "./locale/config";
 import i18n from "./locale/config";
+import "./index.css";
 
 let persistor = persistStore(store);
 
