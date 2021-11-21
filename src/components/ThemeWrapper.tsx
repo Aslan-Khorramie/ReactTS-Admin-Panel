@@ -40,12 +40,21 @@ const ThemeWrapper = (props: ChildrenProps) => {
     typography: {
       fontFamily: direction === "rtl" ? "Vazir-Medium-FD" : "monospace",
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 425,
+        md: 769,
+        lg: 1024,
+        xl: 1440,
+      },
+    },
     palette: {
       primary: {
         light: "#c5e1a5",
         main: "#689f38",
         dark: "#33691e",
-        contrastText: "#000",
+        contrastText: "#fff",
       },
       secondary: {
         light: "#f5f5f5",
