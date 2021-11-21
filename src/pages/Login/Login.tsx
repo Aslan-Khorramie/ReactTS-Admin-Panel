@@ -4,12 +4,15 @@ import { makeStyles, Theme } from "@material-ui/core/styles";
 import { FaLock } from "react-icons/fa";
 import Flag from "react-world-flags";
 import { useDispatch } from "react-redux";
+import "../../locale/config";
 
 // import components
 import { set_theme } from "../../redux/slices/themeSlice";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
   const useStyle = makeStyles((theme: Theme) => ({
     root: {
       width: "100%",
@@ -86,14 +89,16 @@ const Login = () => {
             placeholder="Enter Username"
             variant="outlined"
             className={classes.input}
+            autoComplete="off"
           />
           <TextField
             type="password"
             placeholder="Enter Password"
             variant="outlined"
             className={classes.input}
+            autoComplete="off"
           />
-          <Button className={classes.btn}>Login</Button>
+          <Button className={classes.btn}>{t("login_page.title")}</Button>
         </form>
         <Box className={classes.flagBox}>
           <Box>
@@ -103,6 +108,7 @@ const Login = () => {
               className={classes.flag}
               onClick={() => {
                 dispatch(set_theme("rtl"));
+                i18n.changeLanguage("fa");
               }}
             />
           </Box>
@@ -111,7 +117,10 @@ const Login = () => {
               code="840"
               height="32"
               className={classes.flag}
-              onClick={() => dispatch(set_theme("ltr"))}
+              onClick={() => {
+                dispatch(set_theme("ltr"));
+                i18n.changeLanguage("en");
+              }}
             />
           </Box>
         </Box>
