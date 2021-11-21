@@ -7,11 +7,15 @@ const initialState: ITheme = {
   direction: "rtl",
 };
 
+enum SetTheme {
+  rtl,
+  ltr,
+}
 export const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
-    set_theme: (state, action: PayloadAction<string>) => {
+    set_theme: (state, action: PayloadAction<keyof typeof SetTheme>) => {
       state.direction = action.payload;
     },
   },

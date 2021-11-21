@@ -16,6 +16,11 @@
       "long_password": "Password Should Be Atmost 50 Characters!",
       "copy_right": "Copyright © Hoo Club "
     },
+
+    "appBar": {
+      "farsi": "Persian",
+      "english": "English US"
+    },
     "Advantages": "Advantages"
   }
 }

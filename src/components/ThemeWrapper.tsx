@@ -40,6 +40,20 @@ const ThemeWrapper = (props: ChildrenProps) => {
     typography: {
       fontFamily: direction === "rtl" ? "Vazir-Medium-FD" : "monospace",
     },
+    palette: {
+      primary: {
+        light: "#c5e1a5",
+        main: "#689f38",
+        dark: "#33691e",
+        contrastText: "#000",
+      },
+      secondary: {
+        light: "#f5f5f5",
+        main: "#bdbdbd",
+        dark: "#616161",
+        contrastText: "#000",
+      },
+    },
   });
   return (
     <ThemeProvider theme={theme}>

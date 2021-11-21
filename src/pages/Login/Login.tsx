@@ -60,6 +60,9 @@ const Login = () => {
       backgroundColor: "blue",
       color: "white",
       padding: "12px",
+      "&:hover": {
+        backgroundColor: "#063d96",
+      },
     },
     flagBox: {
       width: "25%",

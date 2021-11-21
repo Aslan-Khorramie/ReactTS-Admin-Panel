@@ -21,9 +21,10 @@ ReactDOM.render(
       <I18nextProvider i18n={i18n}>
         <Suspense fallback="loading">
           <ThemeWrapper>
-            <React.StrictMode>
+            {/* <React.StrictMode>
               <App />
-            </React.StrictMode>
+            </React.StrictMode> */}
+            <App />
           </ThemeWrapper>
         </Suspense>
       </I18nextProvider>
